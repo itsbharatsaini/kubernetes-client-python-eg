@@ -23,8 +23,8 @@ def main():
             yaml_file_path = yaml_files_path + deploy
             deploymentName = yaml_file_path.split("\\")[-1].split(".")[0]
             utils.create_from_yaml(k8s_api_client,yaml_file_path,namespace=NAMESPACE)
-            restult  = k8s_app_client.read_namespaced_deployment_status(deploymentName, NAMESPACE)
-            print("'{0}' created successfully !!".format(restult.metadata.name))
+            result  = k8s_app_client.read_namespaced_deployment_status(deploymentName, NAMESPACE)
+            print("'{0}' created successfully !!".format(result.metadata.name))
         except:
             print("!!ERROR - '" + deploymentName + "' failed!!")
 
