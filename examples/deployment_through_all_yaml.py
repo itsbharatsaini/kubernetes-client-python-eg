@@ -1,7 +1,6 @@
 import os
 from kubernetes import client, config, utils
 
-
 NAMESPACE = "bharat"
 yaml_files_path = "yaml-files\\nginx" +"\\"
 # yaml_files_path = "<Your_Yaml_File_Path>" +"\\"

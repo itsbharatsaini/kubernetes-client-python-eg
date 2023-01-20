@@ -1,0 +1,13 @@
+from kubernetes import client, config, watch
+
+config.load_kube_config()
+k8s_core_api = client.CoreV1Api()
+
+result = k8s_core_api.list_namespace()
+
+for i in result.items:
+    print("%s" % (i.metadata.name))
+
+# f = open("OUTPUT.json", "w")
+# f.write(str(result))
+# f.close()
