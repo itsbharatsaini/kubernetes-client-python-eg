@@ -2,7 +2,7 @@ import os
 from kubernetes import client, config, utils
 
 NAMESPACE = "bharat"
-yaml_files_path = "yaml-files\\nginx" +"\\"
+yaml_files_path = "D:\\Projects\\Kubernetes Python Client\\kubernetes-client-python-eg\\yaml-files\\nginx\\"
 # yaml_files_path = "<Your_Yaml_File_Path>" +"\\"
 
 # Collect all yaml files path in a list.
@@ -20,7 +20,9 @@ def main():
     for deploy in deployment_files:
         try:
             yaml_file_path = yaml_files_path + deploy
+            
             deploymentName = yaml_file_path.split("\\")[-1].split(".")[0]
+            print(deploymentName)
             utils.create_from_yaml(k8s_api_client,yaml_file_path,namespace=NAMESPACE)
             result  = k8s_app_client.read_namespaced_deployment_status(deploymentName, NAMESPACE)
             print("'{0}' created successfully !!".format(result.metadata.name))
