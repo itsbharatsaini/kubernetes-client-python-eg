@@ -2,7 +2,7 @@ from os import path
 from kubernetes import client, config, utils
 
 NAMESPACE = "bharat"
-yaml_file_path = "yaml-files\\nginx\\nginx-deployment.yaml"
+yaml_file_path = "D:\\Projects\\Kubernetes Python Client\\kubernetes-client-python-eg\\yaml-files\\nginx\\nginx-deployment.yaml"
 # yaml_file_path = "<Your_Yaml_File_Path>"
 
 def main():
